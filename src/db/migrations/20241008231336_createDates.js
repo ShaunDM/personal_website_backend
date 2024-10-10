@@ -3,8 +3,8 @@
  * @returns { Promise<void> }
  */
 exports.up = function (knex) {
-  return knex.schema.createTable("dates", function (table) {
-    table.smallint("date").primary();
+  return knex.schema.createTable("dates", (table) => {
+    table.date("date").primary();
     table.smallint("day");
   });
 };

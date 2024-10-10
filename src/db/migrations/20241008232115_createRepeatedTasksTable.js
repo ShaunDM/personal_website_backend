@@ -3,10 +3,10 @@
  * @returns { Promise<void> }
  */
 exports.up = function (knex) {
-  return knex.schema.createTable("repeatedTasks", (table) => {
+  return knex.schema.createTable("repeated_tasks", (table) => {
     table.string("task_name").primary();
-    table.foreign("date").references("start_date").inTable("dates");
-    table.foreign("date").references("end_date").inTable("dates");
+    table.date("start_date");
+    table.date("end_date");
     table.time("start_time");
     table.time("end_time");
     table.boolean("important");
@@ -20,5 +20,5 @@ exports.up = function (knex) {
  * @returns { Promise<void> }
  */
 exports.down = function (knex) {
-  return knex.schema.dropTable("repeatedTasks");
+  return knex.schema.dropTable("repeated_tasks");
 };

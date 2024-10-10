@@ -5,10 +5,10 @@
 exports.up = function (knex) {
   return knex.schema.createTable("tasks", (table) => {
     table.string("task_name").primary();
-    table.foreign("date").references("date").inTable("dates").notNullable();
+    table.date("date").notNullable();
     table.time("start_time");
     table.time("end_time");
-    table.int("points").notNullable();
+    table.integer("points").notNullable();
     table.boolean("important");
     table.boolean("completed");
     table.boolean("repeated");

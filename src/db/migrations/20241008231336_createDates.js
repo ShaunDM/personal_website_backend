@@ -5,7 +5,7 @@
 exports.up = function (knex) {
   return knex.schema.createTable("dates", (table) => {
     table.date("date").primary();
-    table.smallint("day");
+    table.string("holiday").defaultTo(null);
   });
 };
 

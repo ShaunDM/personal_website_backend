@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "backend for personal website",
   "main": "app.js",
+  "bin": {
+    "generate": "src/util/populate_fixtures.js"
+  },
   "scripts": {
     "knex": "knex",
     "migrate": "knex migrate:latest",
@@ -11,12 +14,14 @@
     "seed": "knex seed:run",
     "start": "node src/server.js",
     "start:dev": "nodemon src/server.js",
-    "test": "test"
+    "test": "test",
+    "generate:holidays": "node src/util/populate_fixtures.js generateHolidays"
   },
   "author": "Shaun McRae",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "date-holidays": "^3.23.12",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "knex": "^3.1.0",

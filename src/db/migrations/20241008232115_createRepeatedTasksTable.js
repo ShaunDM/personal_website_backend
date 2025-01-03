@@ -17,12 +17,9 @@ exports.up = function (knex) {
     table.date("implement_start").notNullable();
     table.date("implement_end");
     table.integer("points").notNullable();
-    table.smallint("task_length_days").unsigned().defaultTo(null);
-    table.time("start_time");
-    table.time("end_time");
     table.boolean("important").defaultTo(false);
     table.smallint("repeat_method");
-    table.string("repeat_values");
+    table.json("repeat_values");
   });
 };
 

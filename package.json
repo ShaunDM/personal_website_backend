@@ -4,7 +4,7 @@
   "description": "backend for personal website",
   "main": "app.js",
   "bin": {
-    "generate": "src/util/populate_fixtures.js"
+    "populate": "src/util/populate_fixtures.js"
   },
   "scripts": {
     "knex": "knex",
@@ -15,8 +15,10 @@
     "start": "node src/server.js",
     "start:dev": "nodemon src/server.js",
     "test": "test",
-    "generate:holidays": "node src/util/populate_fixtures.js generateHolidays",
-    "generate:tasks": "node src/util/populate_fixtures.js generateTasks"
+    "populate:holidays": "node src/util/populate_fixtures.js populateHolidays",
+    "populate:tasks": "node src/util/populate_fixtures.js populateTasks",
+    "populate:repeated": "node src/util/populate_fixtures.js populateRepeatedTasks",
+    "populate:all": "node src/util/populate_fixtures.js all"
   },
   "author": "Shaun McRae",
   "license": "ISC",
